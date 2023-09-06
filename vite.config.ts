@@ -32,7 +32,6 @@ export default defineConfig({
         panel: resolve(pagesDir, 'panel', 'index.html'),
         background: resolve(pagesDir, 'background', 'index.ts'),
         popup: resolve(pagesDir, 'popup', 'index.html'),
-        newtab: resolve(pagesDir, 'newtab', 'index.html'),
         options: resolve(pagesDir, 'options', 'index.html'),
       },
       output: {
