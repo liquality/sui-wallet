@@ -6,31 +6,43 @@ const manifest: Manifest.WebExtensionManifest = {
   name: pkg.displayName,
   version: pkg.version,
   description: pkg.description,
-  options_ui: {
-    page: 'src/pages/options/index.html',
-  },
   background: {
-    service_worker: 'src/pages/background/index.js',
+    service_worker: 'js/background/index.js',
     type: 'module',
   },
   action: {
-    default_popup: 'src/pages/popup/index.html',
-    default_icon: 'icon-34.png',
+    default_popup: 'index.html',
+    default_icon: '32x32.png',
   },
   icons: {
-    '128': 'icon-128.png',
+    '16':'16x16.png', 
+    '32':'32x32.png', 
+    '48':'48x48.png', 
+    '128':'128x128.png', 
+    '256':'256x256.png', 
+    '512':'512x512.png', 
+    '1024':'1024x1024.png', 
+    '2048':'2048x2048.png'
   },
   permissions: ["activeTab", "storage"],
   content_scripts: [
     {
       matches: ['http://*/*', 'https://*/*', '<all_urls>'],
-      js: ['src/pages/content/index.js']
+      js: ['js/content/index.js']
     },
   ],
-  devtools_page: 'src/pages/devtools/index.html',
   web_accessible_resources: [
     {
-      resources: ['icon-128.png', 'icon-34.png'],
+      resources: [
+        '16x16.png', 
+        '32x32.png', 
+        '48x48.png', 
+        '128x128.png', 
+        '256x256.png', 
+        '512x512.png', 
+        '1024x1024.png', 
+        '2048x2048.png'
+      ],
       matches: [],
     },
   ],

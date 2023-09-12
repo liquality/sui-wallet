@@ -6,31 +6,36 @@ import buildContentScript from './utils/plugins/build-content-script';
 import { outputFolderName } from './utils/constants';
  
 const root = resolve(__dirname, 'src');
-const pagesDir = resolve(root, 'pages');
+const scriptsDir = resolve(root, 'scripts');
 const outDir = resolve(__dirname, outputFolderName);
 const publicDir = resolve(__dirname, 'public');
 
 export default defineConfig({
   resolve: {
     alias: {
-      '@/': root,
-      'react-native': 'react-native-web'
+      '@': root,
+      'react-native': 'react-native-web',
+      'react-native-svg': 'react-native-svg-web'
     },
   },
-  plugins: [react(), makeManifest(), buildContentScript()],
+  plugins: [
+    react(), 
+    makeManifest(), 
+    buildContentScript()
+  ],
   publicDir,
+  root, 
   build: {
     outDir,
     sourcemap: process.env.__DEV__ === 'true',
     emptyOutDir: false,
     rollupOptions: {
       input: {
-        devtools: resolve(pagesDir, 'devtools', 'index.html'),
-        background: resolve(pagesDir, 'background', 'index.ts'),
-        popup: resolve(pagesDir, 'popup', 'index.html'),
+        background: resolve(scriptsDir, 'background', 'index.ts'),
+        popup: resolve(root, 'index.html'),
       },
       output: {
-        entryFileNames: (chunk) => `src/pages/${chunk.name}/index.js`,
+        entryFileNames: (chunk) => `js/${chunk.name}/index.js`,
       },
     },
   },

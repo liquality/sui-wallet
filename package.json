@@ -9,15 +9,23 @@
     "url": "https://github.com/liquality/sui-wallet.git"
   },
   "scripts": {
-    "build": "vite build",
+    "build": "npx rimraf dist && vite build",
     "dev": "nodemon"
   },
   "type": "module",
   "dependencies": {
+    "@gluestack-style/react": "^0.2.41",
+    "@gluestack-ui/themed": "^0.1.36",
+    "@mysten/sui.js": "^0.41.2",
+    "@react-spring/web": "^9.7.3",
     "@reduxjs/toolkit": "^1.9.5",
     "@scure/bip39": "^1.2.1",
+    "expo-linear-gradient": "^12.3.0",
+    "i18n-js": "^4.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-native-svg": "^13.4.0",
+    "react-native-svg-web": "^1.0.9",
     "react-native-web": "^0.19.8",
     "vite-plugin-css-injected-by-js": "^3.1.1",
     "webextension-polyfill": "^0.10.0"
