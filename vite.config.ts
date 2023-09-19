@@ -13,9 +13,7 @@ const publicDir = resolve(__dirname, 'public');
 export default defineConfig({
   resolve: {
     alias: {
-      '@': root,
-      'react-native': 'react-native-web',
-      'react-native-svg': 'react-native-svg-web'
+      '@': root
     },
   },
   plugins: [
