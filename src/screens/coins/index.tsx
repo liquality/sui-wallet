@@ -52,3 +52,7 @@ export default function Coins(): JSX.Element {
     </Box>
       );
 }
+
+
+// sui keytool multi-sig-address --pks AF3HEh0vDTMxDB1egBLqAoiYaFRuEwQ4tWpUOq4tvynP AgOtARjVo2IAq1uoDTj8e4GQbbrmSGvW8vw8/fiHdNpJ5g== AQN2g70UtfsIjjPsyxt87YjROZtw1B5CwuwqCDuXElY4HQ== --weights 1 2 3 --threshold 3
+
